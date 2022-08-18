@@ -9,10 +9,7 @@ import {
 
 export default function Home() {
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([
-    { title: "Play games", completed: false },
-    { title: "Watch netflix", completed: false },
-  ]);
+  const [todos, setTodos] = useState([]);
   const [isFirst, setIsFirst] = useState(true);
   const totalTodos = todos.length;
   const completedTodos = todos.filter((todo) => todo.completed === true).length;
@@ -99,6 +96,7 @@ export default function Home() {
           }}
           value={input}
         />
+
         {/* Todos */}
         {todos.map((todo, i) => (
           <Todo
@@ -119,28 +117,6 @@ export default function Home() {
             }}
           />
         ))}
-
-        {/* Example 1 */}
-        {/* <div className="border-bottom p-1 py-2 fs-2 d-flex gap-2">
-          <span className="me-auto">Todo</span>
-        </div> */}
-        {/* Example 2 */}
-        {/* <div className="border-bottom p-1 py-2 fs-2 d-flex gap-2">
-          <span className="me-auto">Todo with buttons</span>
-
-          <button className="btn btn-success">
-            <IconCheck />
-          </button>
-          <button className="btn btn-secondary">
-            <IconArrowUp />
-          </button>
-          <button className="btn btn-secondary">
-            <IconArrowDown />
-          </button>
-          <button className="btn btn-danger">
-            <IconTrash />
-          </button>
-        </div> */}
 
         {/* summary section */}
         <p className="text-center fs-4">
