@@ -9,7 +9,10 @@ import {
 
 export default function Home() {
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([
+    { title: "Play games", completed: false },
+    { title: "Watch netflix", completed: false },
+  ]);
   const [isFirst, setIsFirst] = useState(true);
   const totalTodos = todos.length;
   const completedTodos = todos.filter((todo) => todo.completed === true).length;
@@ -148,7 +151,7 @@ export default function Home() {
 
         {/* Made by section */}
         <p className="text-center mt-3 text-muted fst-italic">
-          made by Chayanin Suatap 12345679
+          made by Panyapat Wongdee 640610650
         </p>
       </div>
     </div>
