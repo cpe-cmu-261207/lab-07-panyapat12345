@@ -66,7 +66,8 @@ export default function Home() {
 
   const loadTodo = () => {
     const todosJSON = localStorage.getItem("TodoList");
-    setTodos(JSON.parse(todosJSON));
+    if (todosJSON === null) setTodos([]);
+    else setTodos(JSON.parse(todosJSON));
   };
 
   return (
